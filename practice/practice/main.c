@@ -6,24 +6,25 @@
 //  Copyright © 2020 이유진. All rights reserved.
 //
 
-#include <stdio.h>
+#include<stdio.h>
+#include <stdlib.h>
+#include<string.h>
+
 
 int main(int argc, const char * argv[]) {
  
-    int i = 0 ;
-    char str[4];
     
-    str[0] = 'a' ;
-    str[1] = 'b' ;
-    str[2] = 'c' ;
-    str[3] = '\0';
+    char src[] = "The worst things to eat before you sleep";
+    char dst[100] ;
     
-    printf("%s\n", str);
+    strcpy(dst, src) ;
+    char str[30] = "happy C programming" ;
     
-    while ( str[i] != '\0' ) {
-        printf("%c", str[i] );
-        i++ ;
-    }
     
+    printf("copied string : %s", dst);
+    
+    printf("length of \"%s\" : %i\n", str, strlen(str) );
+    
+  
     return 0;
 }
