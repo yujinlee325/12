@@ -13,18 +13,25 @@
 
 int main(int argc, const char * argv[]) {
  
-    
-    char src[] = "The worst things to eat before you sleep";
-    char dst[100] ;
-    
-    strcpy(dst, src) ;
-    char str[30] = "happy C programming" ;
+    int i ;
+    FILE *fp;
+    char str[100];
     
     
-    printf("copied string : %s", dst);
+    fp = fopen("sample.txt", "w");
+    if (fp == NULL)
+    {
+        return -1 ;
+    }
     
-    printf("length of \"%s\" : %i\n", str, strlen(str) );
+    for(i=0;i<3;i++)
+    {
+      printf("Input a word : ") ;
+      scanf("%s", str) ;
+      fprintf(fp,"%s\n",  str);
+    }
     
-  
+    fclose(fp);
+    
     return 0;
 }
